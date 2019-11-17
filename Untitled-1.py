@@ -15,13 +15,18 @@ while True:
 
     colonne_choisit = int(input("quel colonne ? \nentrer un nombre de 1 à 7:   "))-1
     clear()
+
     for i in range(0,6):
 
         #print(" le i est " , i, 'et le matrix[i][col est ]',Matrix[i][colonne_choisit])
         if Matrix[i][colonne_choisit] == 0 and i == 5:
             Matrix[5][colonne_choisit] = pion
             break
-
+        test = Matrix[0][colonne_choisit] 
+        if test == 'X': 
+            print('you can\'t overflow the board, that\'s rude')
+            break
+        
         if Matrix[i][colonne_choisit] != 0:
             Matrix[i-1][colonne_choisit] = pion
             break
