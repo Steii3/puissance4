@@ -5,7 +5,7 @@ def clear():
     '''clear console'''
     return system('cls')
 
-w, h = 7, 6;
+w, h = 7, 6
 Matrix = [[0 for x in range(w)] for y in range(h)] 
 Matrix[5][0] = 'O'
 pion = 'X'
@@ -24,13 +24,15 @@ while True:
             break
         test = Matrix[0][colonne_choisit] 
         if test == 'X': 
-            print('you can\'t overflow the board, that\'s rude')
+            print('you can\'t overflow the board, that\'s rude >:()')
             break
         
         if Matrix[i][colonne_choisit] != 0:
             Matrix[i-1][colonne_choisit] = pion
             break
         
+    
+#affiche le tableau        
     for i in range(6):
-        print(' '.join(map(str, Matrix[i])),) #convertie chaque caractere de matrix en str et le regroupe en une ligne séparé par 2espaces 
+        print('  '.join(map(str, Matrix[i])),) #convertie chaque caractere de matrix en str et le regroupe en une ligne séparé par 2espaces 
     
