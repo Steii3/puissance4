@@ -31,6 +31,18 @@ while True:
             Matrix[i-1][colonne_choisit] = pion
             break
         
+    def ascii_switch(colonne_choisit):
+            switcher = {
+            0: '',
+            1: '',
+            2: '',
+            3: '',
+            4: '',
+            5: '',
+            6: '',
+            }
+            return switcher.get(colonne_choisit,"erreur")
+            
     for i in range(6):
         print(' '.join(map(str, Matrix[i])),) #convertie chaque caractere de matrix en str et le regroupe en une ligne séparé par 2espaces 
     

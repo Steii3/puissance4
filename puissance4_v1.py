@@ -31,7 +31,6 @@ while True:
             Matrix[i-1][colonne_choisit] = pion
             break
         
-    
 #affiche le tableau        
     for i in range(6):
         print('  '.join(map(str, Matrix[i])),) #convertie chaque caractere de matrix en str et le regroupe en une ligne séparé par 2espaces 
