@@ -5,11 +5,12 @@ def clear():
     '''clear console'''
     return system('cls')
 
-w, h = 7, 6;
+w, h = 7, 6
 Matrix = [[0 for x in range(w)] for y in range(h)] 
 Matrix[5][0] = 'O'
 pion = 'X'
-
+pions = ['X','O']
+gagné = False
 
 while True:
 
@@ -31,18 +32,32 @@ while True:
             Matrix[i-1][colonne_choisit] = pion
             break
         
-    def ascii_switch(colonne_choisit):
-            switcher = {
-            0: '',
-            1: '',
-            2: '',
-            3: '',
-            4: '',
-            5: '',
-            6: '',
-            }
-            return switcher.get(colonne_choisit,"erreur")
+   
+                    
+    for i in pions:
+    #recherche de gagné sur les colonnes
+        for x in range(3):
+            for y in range(6):
+                if (Matrix[x][y]  and Matrix[x+1][y] and Matrix[x+2][y] and Matrix[x+3][y]) == i:
+                    print("{} = {} = {} = {}".format(Matrix[x][y],Matrix[x+1][y],Matrix[x+2][y],Matrix[x+3][y]))
+                    gagné = True
+
+            #recherche de gagné sur les lignes
+        for x in range(6):
+            for y in range(3):
+                if (Matrix[x][y]  and Matrix[x][y+1] and Matrix[x][y+2] and Matrix[x][y+3]) == i:
+                    print("{} = {} = {} = {}".format(Matrix[x][y],Matrix[x][y+1],Matrix[x][y+2],Matrix[x][y+3]))
+                    gagné = True
+                
             
+    if gagné == True:
+        if i == i[0]:
+            print('le joueur 1 a gagné')
+            exit()
+        if i == i[1]:
+            print('le joueur 2 a gagné')
+            exit()
+         
     for i in range(6):
         print(' '.join(map(str, Matrix[i])),) #convertie chaque caractere de matrix en str et le regroupe en une ligne séparé par 2espaces 
     
