@@ -42,7 +42,7 @@ while True:
             for y in range(6):
                 if pion == Matrix[x][y] == Matrix[x+1][y] == Matrix[x+2][y] == Matrix[x+3][y]:
                     print("pion:{} ={} = {} = {} = {}".format(pion,Matrix[x][y],Matrix[x+1][y],Matrix[x+2][y],Matrix[x+3][y]))
-                    print("ok boomer")
+                    print("collonne")
                     gagné = True
 
             #recherche de gagné sur les lignes
@@ -50,11 +50,11 @@ while True:
             for y in range(3):
                 if pion == Matrix[x][y] == Matrix[x][y+1] == Matrix[x][y+2] == Matrix[x][y+3]:
                     print("pion:{} ={} = {} = {} = {}".format(pion,Matrix[x][y],Matrix[x][y+1],Matrix[x][y+2],Matrix[x][y+3]))
-                    print("ok boomer")
+                    print("ligne ")
                     gagné = True
-    # if pion == Matrix[5][0] == Matrix[4][0] == Matrix[3][0] == Matrix[2][0]:
+    #if pion == Matrix[5][0] == Matrix[4][0] == Matrix[3][0] == Matrix[2][0]:
     #     print(pion,Matrix[5][0],Matrix[4][0])
-    #     print("ok boomer")
+    #     print("ok cuumer")
     
 #affiche le tableau        
     for i in range(6):
